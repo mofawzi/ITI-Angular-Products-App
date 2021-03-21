@@ -1,0 +1,15 @@
+<div class="container">
+  <h2 class="mt-5" *ngIf="counter === 0">Cart is Empty.</h2>
+
+  <h2 class="mt-5" *ngIf="counter > 0">
+    Total Items in Cart: <strong>({{ counter }})</strong> Items.
+  </h2>
+
+  <button class="btn btn-danger btn-lg mt-4" (click)="clearCart()">
+    Clear Cart
+  </button>
+
+  <button class="btn btn-lg btn-outline-secondary mt-4 d-block" routerLink="">
+    Back to products
+  </button>
+</div>

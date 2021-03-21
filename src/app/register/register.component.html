@@ -1,0 +1,103 @@
+<div class="container">
+  <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+    <h2>Angular Reactive Form</h2>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" formControlName="name" />
+      <div *ngIf="(register.name.touched || submitted) && register.name.errors">
+        <div class="alert alert-danger" *ngIf="register.name.errors.required">
+          Name is required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="text" class="form-control" formControlName="email" />
+      <div
+        *ngIf="(register.email.touched || submitted) && register.email.errors"
+      >
+        <p class="alert alert-danger" *ngIf="register.email.errors.required">
+          Email is required!
+        </p>
+        <p class="alert alert-danger" *ngIf="register.email.errors.pattern">
+          Email is not valid
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="uname">Username</label>
+      <input type="text" class="form-control" formControlName="uname" />
+      <div
+        *ngIf="(register.uname.touched || submitted) && register.uname.errors"
+      >
+        <p class="alert alert-danger" *ngIf="register.uname.errors.required">
+          Username is required!
+        </p>
+        <p class="alert alert-danger" *ngIf="register.uname.errors.pattern">
+          Username can't contain spaces
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" formControlName="password" />
+      <div
+        *ngIf="
+          (register.password.touched || submitted) && register.password.errors
+        "
+      >
+        <p class="alert alert-danger" *ngIf="register.password.errors.required">
+          password is required!
+        </p>
+        <p
+          class="alert alert-danger"
+          *ngIf="register.password.errors.minlength"
+        >
+          password must be at least 8 chars.
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="confirmPassword"
+      />
+      <div *ngIf="register.confirmPassword.touched || submitted">
+        <div *ngIf="register.confirmPassword.errors">
+          <p
+            class="alert alert-danger"
+            *ngIf="register.confirmPassword.errors.required"
+          >
+            Confirm Password is required!
+          </p>
+          <p
+            class="alert alert-danger"
+            *ngIf="register.confirmPassword.errors.minlength"
+          >
+            Confirm Password must be at least 8 chars.
+          </p>
+        </div>
+
+        <!-- Check if passwords don't match -->
+        <p
+          class="alert alert-danger"
+          *ngIf="register.confirmPassword.value !== register.password.value"
+        >
+          Password doesn't match
+        </p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Register</button>
+    <!-- <button type="submit" class="btn btn-primary" [disabled]="!regForm.valid">Register</button> -->
+  </form>
+  <br />
+  <p>Already have an account! <a routerLink="/login">Login</a></p>
+</div>

@@ -1,0 +1,7 @@
+<td>{{index + 1}}.</td>
+<td><img class="img-fluid" [src]="myProduct.poster_path" alt="Product poster" /></td>
+<td class="text-uppercase font-weight-bold">{{myProduct.title}}</td>
+<td>{{myProduct.overview}}</td>
+<td>{{myProduct.release_date | date: "d/M/yyyy"}}</td>
+<td>{{myProduct.popularity}}</td>
+<td  [ngStyle]="{'color': myProduct.stock_avaliable ? 'green' : 'red' }">{{myProduct.stock_avaliable | stockVal }}</td>

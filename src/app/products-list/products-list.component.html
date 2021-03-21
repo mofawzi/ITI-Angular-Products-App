@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">Num.</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Title.</th>
+                        <th scope="col">Overview</th>
+                        <th scope="col">release_date</th>
+                        <th scope="col">Popularity</th>
+                        <th scope="col">Available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr app-product [myProduct]="product" [index]="i" *ngFor = "let product of products ;let i = index"></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
