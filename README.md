@@ -12,14 +12,10 @@ User can add products to cart, clear cart, Also find latest movies
 - Angular
 - NgRx
 - Bootstrap
-- API
+- Mockup API
 - Typescript
 - HTML
 - Sass
-
-### Application link:
-
-- [Products App](https://mofawzi.github.io/ITI-Angular-Products-App/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
